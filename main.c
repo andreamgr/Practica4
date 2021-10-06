@@ -449,7 +449,11 @@ void main(void) {
     ADCON1 = 15;
 
     TRISA = 0b00010000; //Salida RA0 
-    TRISB = 0b00000000; //Entrada de los botones 
+   //Entrada de los botones 
+    TRISBbits.RB0 = 1;
+    TRISBbits.RB1 = 1;
+    TRISBbits.RB2 = 1;
+    
     
     
  
@@ -471,7 +475,6 @@ void main(void) {
     
     
 }
-
 
 
 

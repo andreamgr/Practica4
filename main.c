@@ -51,7 +51,7 @@ int a,b,s;//DECLARAMOS VARIABLES DE TIPO ENTERO
  }
 
  //////////////////////PARA LA 2 CANCION 
- /*
+ 
  void tocar_nota2(int duracion, float tfrec){  //PARA LA 2 CANCIÓN
      
      duracion = duracion/tfrec;
@@ -87,9 +87,9 @@ int a,b,s;//DECLARAMOS VARIABLES DE TIPO ENTERO
          INTCONbits.TMR0IF=0;
 }
  }
-*/
+
  ///////////////////////////////PARA LA 3 CANCIÓN
-/*
+
  void tocar_nota3(int duracion, float tfrec){  //PARA LA 3 CANCIÓN
      
      duracion = duracion/tfrec;
@@ -125,7 +125,7 @@ int a,b,s;//DECLARAMOS VARIABLES DE TIPO ENTERO
          INTCONbits.TMR0IF=0;
 }
  }
-*/
+
  void confT0(){
      //11000010
     T0CONbits.TMR0ON = 1; //encendido
@@ -207,7 +207,7 @@ int a,b,s;//DECLARAMOS VARIABLES DE TIPO ENTERO
         silencio1(1000,3.822); 
  }
 
- /*
+ 
  void cancion2(){ //ANDREA
       
        tocar_nota2(125,12.13); //mi
@@ -328,9 +328,9 @@ int a,b,s;//DECLARAMOS VARIABLES DE TIPO ENTERO
         
  }
 
- */
  
- /*
+ 
+ 
   void cancion3(){ //Emman
       
       tocar_nota3(500,2.70); 
@@ -441,7 +441,7 @@ tocar_nota3(500,2.70);
  tocar_nota3(500,2.70);
    silencio3(1000,3.822);     
  }
- */ 
+ 
 
 
 void main(void) {
@@ -449,21 +449,35 @@ void main(void) {
     ADCON1 = 15;
 
     TRISA = 0b00010000; //Salida RA0 
+    
    //Entrada de los botones 
     TRISBbits.RB0 = 1;
     TRISBbits.RB1 = 1;
     TRISBbits.RB2 = 1;
     
     
-    
  
-    confT0();
+    //confT0();
     
     
     while (1) { 
         
- 
-      cancion1();
+          
+     if (PORTBbits.RB0 == 1) {
+          confT0();
+          cancion1();
+      
+     }
+     if (PORTBbits.RB1 == 1) {
+         confT0();
+          cancion2();
+     }
+     if (PORTBbits.RB2 == 1) {
+         confT0();
+          cancion3();
+     }
+      
+     
         
         
  	} 
@@ -475,6 +489,4 @@ void main(void) {
     
     
 }
-
-
 

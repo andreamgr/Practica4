@@ -45,7 +45,7 @@
 [v _confT0 confT0 `(v  1 e 1 0 ]
 "72
 [v _sw sw `(v  1 e 1 0 ]
-"141
+"139
 [v _main main `(v  1 e 1 0 ]
 [s S148 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
@@ -170,15 +170,15 @@
 [v _INTCONbits INTCONbits `VES232  1 e 1 @4082 ]
 "17 C:\Users\Microcontroladores\Practica4.X\main.c
 [v _b b `i  1 e 2 0 ]
-"141
+"139
 [v _main main `(v  1 e 1 0 ]
 {
-"163
+"161
 } 0
 "72
 [v _sw sw `(v  1 e 1 0 ]
 {
-"137
+"135
 } 0
 "19
 [v _tocar_nota tocar_nota `(v  1 e 1 0 ]

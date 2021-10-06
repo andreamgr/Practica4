@@ -22,6 +22,7 @@ float distancia = 2;
      tfrec = 255-((tfrec/2)/(.0002*128));
 
        for(b=0;b<duracion;b++){
+           
             PORTAbits.RA0 = 1;
            TMR0 = tfrec;
            while(INTCONbits.TMR0IF==0);
@@ -69,8 +70,9 @@ float distancia = 2;
  }
  
  
- void sw(){
-        tocar_nota(500,3.034);
+ void cancion1(){
+      
+     tocar_nota(500,3.034);
       tocar_nota(500,3.034);
       tocar_nota(500,3.034);
       
@@ -126,16 +128,146 @@ float distancia = 2;
         tocar_nota(500,3.608); 
          tocar_nota(375,3.822);
         tocar_nota(125,2.551);
-        
+       
         tocar_nota(500,3.034); 
         tocar_nota(375,3.822);
         tocar_nota(125,2.551);
         tocar_nota(2500,3.034); 
-        
-        
-        
+        silencio(1000,3.822); 
  }
 
+ void cancion2(){
+      
+     tocar_nota(500,3.034);
+      tocar_nota(500,3.034);
+      tocar_nota(500,3.034);
+      
+       tocar_nota(375,3.82);     
+        tocar_nota(125,2.551);
+        
+        tocar_nota(500,3.034);
+        
+       tocar_nota(375,3.82);
+        tocar_nota(125,2.551);
+        
+        tocar_nota(1000,3.034);
+      
+        tocar_nota(500,2.028);
+        tocar_nota(500,2.028);
+        tocar_nota(500,2.028);
+        
+        tocar_nota(375,1.911);
+        tocar_nota(125,2.551);
+        
+        tocar_nota(500,3.61);
+        
+         tocar_nota(375,3.82);
+        tocar_nota(125,2.551);
+        
+        tocar_nota(1000,3.034);
+
+        tocar_nota(500,1.517);
+        tocar_nota(375,3.034);
+        tocar_nota(125,3.034);    
+        tocar_nota(500,1.517);
+ 
+         tocar_nota(375,1.607);
+        tocar_nota(125,1.703);  
+ 
+         tocar_nota(125,1.804);
+          tocar_nota(125,1.911);
+          tocar_nota(300,1.804);
+          
+          silencio(100,3.822); 
+          tocar_nota(300,2.863);
+          tocar_nota(500,2.145);
+
+          tocar_nota(375,2.273);
+        tocar_nota(125,2.408);  
+        
+        tocar_nota(125,2.551); 
+        tocar_nota(125,2.703); 
+        tocar_nota(300,2.551); 
+        
+        silencio(100,3.822); 
+        tocar_nota(300,3.822); 
+        tocar_nota(500,3.608); 
+         tocar_nota(375,3.822);
+        tocar_nota(125,2.551);
+       
+        tocar_nota(500,3.034); 
+        tocar_nota(375,3.822);
+        tocar_nota(125,2.551);
+        tocar_nota(2500,3.034); 
+        silencio(1000,3.822); 
+ }
+
+ 
+  void cancion3(){
+      
+     tocar_nota(500,3.034);
+      tocar_nota(500,3.034);
+      tocar_nota(500,3.034);
+      
+       tocar_nota(375,3.82);     
+        tocar_nota(125,2.551);
+        
+        tocar_nota(500,3.034);
+        
+       tocar_nota(375,3.82);
+        tocar_nota(125,2.551);
+        
+        tocar_nota(1000,3.034);
+      
+        tocar_nota(500,2.028);
+        tocar_nota(500,2.028);
+        tocar_nota(500,2.028);
+        
+        tocar_nota(375,1.911);
+        tocar_nota(125,2.551);
+        
+        tocar_nota(500,3.61);
+        
+         tocar_nota(375,3.82);
+        tocar_nota(125,2.551);
+        
+        tocar_nota(1000,3.034);
+
+        tocar_nota(500,1.517);
+        tocar_nota(375,3.034);
+        tocar_nota(125,3.034);    
+        tocar_nota(500,1.517);
+ 
+         tocar_nota(375,1.607);
+        tocar_nota(125,1.703);  
+ 
+         tocar_nota(125,1.804);
+          tocar_nota(125,1.911);
+          tocar_nota(300,1.804);
+          
+          silencio(100,3.822); 
+          tocar_nota(300,2.863);
+          tocar_nota(500,2.145);
+
+          tocar_nota(375,2.273);
+        tocar_nota(125,2.408);  
+        
+        tocar_nota(125,2.551); 
+        tocar_nota(125,2.703); 
+        tocar_nota(300,2.551); 
+        
+        silencio(100,3.822); 
+        tocar_nota(300,3.822); 
+        tocar_nota(500,3.608); 
+         tocar_nota(375,3.822);
+        tocar_nota(125,2.551);
+       
+        tocar_nota(500,3.034); 
+        tocar_nota(375,3.822);
+        tocar_nota(125,2.551);
+        tocar_nota(2500,3.034); 
+        silencio(1000,3.822); 
+ }
 
 
 void main(void) {
@@ -149,7 +281,7 @@ void main(void) {
   while (1) { 
         
  
-      sw();
+      cancion1();
         
         
  	} 

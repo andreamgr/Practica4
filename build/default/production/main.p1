@@ -896,43 +896,46 @@ Version 4.0 HI-TECH Software Intermediate Code
 "133
 [; ;main.c: 133:         tocar_nota(2500,3.034);
 [e ( _tocar_nota (2 , -> 2500 `i -> .3.034 `f ]
-"137
-[; ;main.c: 137:  }
+"134
+[; ;main.c: 134:         silencio(1000,3.822);
+[e ( _silencio (2 , -> 1000 `i -> .3.822 `f ]
+"135
+[; ;main.c: 135:  }
 [e :UE 392 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"141
-[; ;main.c: 141: void main(void) {
+"139
+[; ;main.c: 139: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"143
-[; ;main.c: 143:     ADCON1 = 15;
+"141
+[; ;main.c: 141:     ADCON1 = 15;
 [e = _ADCON1 -> -> 15 `i `uc ]
-"145
-[; ;main.c: 145:     TRISA = 0b00010000;
+"143
+[; ;main.c: 143:     TRISA = 0b00010000;
 [e = _TRISA -> -> 16 `i `uc ]
-"147
-[; ;main.c: 147:     LCD_Init();
+"145
+[; ;main.c: 145:     LCD_Init();
 [e ( _LCD_Init ..  ]
-"148
-[; ;main.c: 148:     confT0();
+"146
+[; ;main.c: 146:     confT0();
 [e ( _confT0 ..  ]
-"149
-[; ;main.c: 149:   while (1) {
+"147
+[; ;main.c: 147:   while (1) {
 [e :U 395 ]
 {
-"152
-[; ;main.c: 152:       sw();
+"150
+[; ;main.c: 150:       sw();
 [e ( _sw ..  ]
-"155
-[; ;main.c: 155:   }
+"153
+[; ;main.c: 153:   }
 }
 [e :U 394 ]
 [e $U 395  ]
 [e :U 396 ]
-"163
-[; ;main.c: 163: }
+"161
+[; ;main.c: 161: }
 [e :UE 393 ]
 }

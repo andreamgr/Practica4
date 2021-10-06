@@ -5896,9 +5896,7 @@ float distancia = 2;
         tocar_nota(375,3.822);
         tocar_nota(125,2.551);
         tocar_nota(2500,3.034);
-
-
-
+        silencio(1000,3.822);
  }
 
 

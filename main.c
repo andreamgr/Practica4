@@ -358,9 +358,8 @@ void main(void) {
    
     ADCON1 = 15;
 
-    TRISA = 0b00010000;
-    
-    LCD_Init();
+    TRISA =  0b00010000;
+     TRISB = 0b11111111;
     confT0();
 
 while (1) { 
@@ -379,7 +378,6 @@ while(PORTBbits.RB1==1);
          while(PORTBbits.RB2==1);
                        cancion3();
               
-     
      }
      else{
          PORTAbits.RA0 = 0;

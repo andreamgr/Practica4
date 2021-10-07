@@ -31,9 +31,7 @@
 [v ___omul __omul `(uo  1 e 8 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-"5 C:\Users\Microcontroladores\Practica4.X\LCD_lib.c
-[v _LCD_Init LCD_Init `(v  1 e 1 0 ]
-"51
+"51 C:\Users\Microcontroladores\Practica4.X\LCD_lib.c
 [v _LCD_Comando LCD_Comando `(v  1 e 1 0 ]
 "102
 [v _LCD_Data LCD_Data `(v  1 e 1 0 ]
@@ -129,6 +127,8 @@
 [v _LATDbits LATDbits `VES84  1 e 1 @3980 ]
 "3427
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
+"3625
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "4001
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
 [s S26 . 1 `uc 1 TRISD0 1 0 :1:0 
@@ -200,7 +200,7 @@
 "357
 [v _main main `(v  1 e 1 0 ]
 {
-"396
+"394
 } 0
 "60
 [v _confT0 confT0 `(v  1 e 1 0 ]
@@ -303,18 +303,4 @@
 [v ___fldiv@b b `d  1 p 4 14 ]
 [v ___fldiv@a a `d  1 p 4 18 ]
 "185
-} 0
-"5 C:\Users\Microcontroladores\Practica4.X\LCD_lib.c
-[v _LCD_Init LCD_Init `(v  1 e 1 0 ]
-{
-"49
-} 0
-"51
-[v _LCD_Comando LCD_Comando `(v  1 e 1 0 ]
-{
-[v LCD_Comando@cmd cmd `uc  1 a 1 wreg ]
-[v LCD_Comando@cmd cmd `uc  1 a 1 wreg ]
-"53
-[v LCD_Comando@cmd cmd `uc  1 a 1 0 ]
-"83
 } 0

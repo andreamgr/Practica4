@@ -70,10 +70,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3427
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 3427: extern volatile unsigned char TRISA __attribute__((address(0xF92)));
 [v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
-"17 ./LCD_lib.h
-[; ;./LCD_lib.h: 17: void LCD_Init(void);
-[v _LCD_Init `(v ~T0 @X0 0 ef ]
-"2459 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
+"3625
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 3625: extern volatile unsigned char TRISB __attribute__((address(0xF93)));
+[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
+"2459
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2459:     struct {
 [s S109 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S109 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
@@ -1405,88 +1405,88 @@ Version 4.0 HI-TECH Software Intermediate Code
 "361
 [; ;main.c: 361:     TRISA = 0b00010000;
 [e = _TRISA -> -> 16 `i `uc ]
+"362
+[; ;main.c: 362:      TRISB = 0b11111111;
+[e = _TRISB -> -> 255 `i `uc ]
 "363
-[; ;main.c: 363:     LCD_Init();
-[e ( _LCD_Init ..  ]
-"364
-[; ;main.c: 364:     confT0();
+[; ;main.c: 363:     confT0();
 [e ( _confT0 ..  ]
-"366
-[; ;main.c: 366: while (1) {
+"365
+[; ;main.c: 365: while (1) {
 [e :U 397 ]
 {
-"368
-[; ;main.c: 368:      if (PORTBbits.RB0 == 1) {
+"367
+[; ;main.c: 367:      if (PORTBbits.RB0 == 1) {
 [e $ ! == -> . . _PORTBbits 0 0 `i -> 1 `i 399  ]
 {
-"369
-[; ;main.c: 369:          while(PORTBbits.RB0==1);
+"368
+[; ;main.c: 368:          while(PORTBbits.RB0==1);
 [e $U 400  ]
 [e :U 401 ]
 [e :U 400 ]
 [e $ == -> . . _PORTBbits 0 0 `i -> 1 `i 401  ]
 [e :U 402 ]
-"370
-[; ;main.c: 370:                        cancion1();
+"369
+[; ;main.c: 369:                        cancion1();
 [e ( _cancion1 ..  ]
-"372
-[; ;main.c: 372:      }
+"371
+[; ;main.c: 371:      }
 }
 [e :U 399 ]
-"373
-[; ;main.c: 373:      if (PORTBbits.RB1 == 1) {
+"372
+[; ;main.c: 372:      if (PORTBbits.RB1 == 1) {
 [e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 403  ]
 {
-"374
-[; ;main.c: 374: while(PORTBbits.RB1==1);
+"373
+[; ;main.c: 373: while(PORTBbits.RB1==1);
 [e $U 404  ]
 [e :U 405 ]
 [e :U 404 ]
 [e $ == -> . . _PORTBbits 0 1 `i -> 1 `i 405  ]
 [e :U 406 ]
-"375
-[; ;main.c: 375:                        cancion2();
+"374
+[; ;main.c: 374:                        cancion2();
 [e ( _cancion2 ..  ]
-"377
-[; ;main.c: 377:      }
+"376
+[; ;main.c: 376:      }
 }
 [e :U 403 ]
-"378
-[; ;main.c: 378:      if (PORTBbits.RB2 == 1) {
+"377
+[; ;main.c: 377:      if (PORTBbits.RB2 == 1) {
 [e $ ! == -> . . _PORTBbits 0 2 `i -> 1 `i 407  ]
 {
-"379
-[; ;main.c: 379:          while(PORTBbits.RB2==1);
+"378
+[; ;main.c: 378:          while(PORTBbits.RB2==1);
 [e $U 408  ]
 [e :U 409 ]
 [e :U 408 ]
 [e $ == -> . . _PORTBbits 0 2 `i -> 1 `i 409  ]
 [e :U 410 ]
-"380
-[; ;main.c: 380:                        cancion3();
+"379
+[; ;main.c: 379:                        cancion3();
 [e ( _cancion3 ..  ]
-"383
-[; ;main.c: 383:      }
+"381
+[; ;main.c: 381:      }
 }
 [e $U 411  ]
-"384
-[; ;main.c: 384:      else{
+"382
+[; ;main.c: 382:      else{
 [e :U 407 ]
 {
-"385
-[; ;main.c: 385:          PORTAbits.RA0 = 0;
+"383
+[; ;main.c: 383:          PORTAbits.RA0 = 0;
 [e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-"386
-[; ;main.c: 386:      }
+"384
+[; ;main.c: 384:      }
 }
 [e :U 411 ]
-"388
-[; ;main.c: 388:   }
+"386
+[; ;main.c: 386:   }
 }
 [e :U 396 ]
 [e $U 397  ]
 [e :U 398 ]
-"396
-[; ;main.c: 396: }
+"394
+[; ;main.c: 394: }
 [e :UE 395 ]
 }

@@ -73,6 +73,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17 ./LCD_lib.h
 [; ;./LCD_lib.h: 17: void LCD_Init(void);
 [v _LCD_Init `(v ~T0 @X0 0 ef ]
+"2459 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2459:     struct {
+[s S109 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S109 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"2469
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2469:     struct {
+[s S110 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S110 . INT0 INT1 INT2 . PGM PGC PGD ]
+"2478
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2478:     struct {
+[s S111 :3 `uc 1 :1 `uc 1 ]
+[n S111 . . CCP2_PA2 ]
+"2458
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2458: typedef union {
+[u S108 `S109 1 `S110 1 `S111 1 ]
+[n S108 . . . . ]
+"2483
+[; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 2483: extern volatile PORTBbits_t PORTBbits __attribute__((address(0xF81)));
+[v _PORTBbits `VS108 ~T0 @X0 0 e@3969 ]
 "54 C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.50/packs/Microchip/PIC18Fxxxx_DFP/1.2.26/xc8\pic\include\proc\pic18f4550.h: 54: __asm("SPPDATA equ 0F62h");
 [; <" SPPDATA equ 0F62h ;# ">
@@ -605,337 +624,869 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _duracion `i ~T0 @X0 1 r1 ]
 [v _tfrec `f ~T0 @X0 1 r2 ]
 [f ]
-"21
-[; ;main.c: 21:      duracion = duracion/tfrec;
-[e = _duracion -> / -> _duracion `f _tfrec `i ]
 "22
-[; ;main.c: 22:      tfrec = 255-((tfrec/2)/(.0002*128));
+[; ;main.c: 22:      duracion = duracion/tfrec;
+[e = _duracion -> / -> _duracion `f _tfrec `i ]
+"23
+[; ;main.c: 23:      tfrec = 255-((tfrec/2)/(.0002*128));
 [e = _tfrec -> - -> -> 255 `i `d / -> / _tfrec -> -> 2 `i `f `d * .0.0002 -> -> 128 `i `d `f ]
-"24
-[; ;main.c: 24:        for(b=0;b<duracion;b++){
+"25
+[; ;main.c: 25:        for(b=0;b<duracion;b++){
 {
 [e = _b -> 0 `i ]
 [e $U 373  ]
 [e :U 370 ]
 {
-"25
-[; ;main.c: 25:             PORTAbits.RA0 = 1;
-[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
-"26
-[; ;main.c: 26:            TMR0 = tfrec;
-[e = _TMR0 -> _tfrec `us ]
 "27
-[; ;main.c: 27:            while(INTCONbits.TMR0IF==0);
+[; ;main.c: 27:             PORTAbits.RA0 = 1;
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+"28
+[; ;main.c: 28:            TMR0 = tfrec;
+[e = _TMR0 -> _tfrec `us ]
+"29
+[; ;main.c: 29:            while(INTCONbits.TMR0IF==0);
 [e $U 374  ]
 [e :U 375 ]
 [e :U 374 ]
 [e $ == -> . . _INTCONbits 0 2 `i -> 0 `i 375  ]
 [e :U 376 ]
-"28
-[; ;main.c: 28:            INTCONbits.TMR0IF=0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "30
-[; ;main.c: 30:         PORTAbits.RA0=0;
-[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-"31
-[; ;main.c: 31:          TMR0 = tfrec;
-[e = _TMR0 -> _tfrec `us ]
+[; ;main.c: 30:            INTCONbits.TMR0IF=0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "32
-[; ;main.c: 32:          while(INTCONbits.TMR0IF==0);
+[; ;main.c: 32:         PORTAbits.RA0=0;
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+"33
+[; ;main.c: 33:          TMR0 = tfrec;
+[e = _TMR0 -> _tfrec `us ]
+"34
+[; ;main.c: 34:          while(INTCONbits.TMR0IF==0);
 [e $U 377  ]
 [e :U 378 ]
 [e :U 377 ]
 [e $ == -> . . _INTCONbits 0 2 `i -> 0 `i 378  ]
 [e :U 379 ]
-"33
-[; ;main.c: 33:          INTCONbits.TMR0IF=0;
+"35
+[; ;main.c: 35:          INTCONbits.TMR0IF=0;
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"34
-[; ;main.c: 34: }
+"36
+[; ;main.c: 36: }
 }
 [e ++ _b -> 1 `i ]
 [e :U 373 ]
 [e $ < _b _duracion 370  ]
 [e :U 371 ]
 }
-"35
-[; ;main.c: 35:  }
+"38
+[; ;main.c: 38:  }
 [e :UE 369 ]
 }
-"36
-[; ;main.c: 36:  void silencio(int duracion, float tfrec){
+"39
+[; ;main.c: 39:  void silencio(int duracion, float tfrec){
 [v _silencio `(v ~T0 @X0 1 ef2`i`f ]
 {
 [e :U _silencio ]
 [v _duracion `i ~T0 @X0 1 r1 ]
 [v _tfrec `f ~T0 @X0 1 r2 ]
 [f ]
-"38
-[; ;main.c: 38:      duracion = duracion/tfrec;
-[e = _duracion -> / -> _duracion `f _tfrec `i ]
-"39
-[; ;main.c: 39:      tfrec = 255-((tfrec/2)/(.0002*128));
-[e = _tfrec -> - -> -> 255 `i `d / -> / _tfrec -> -> 2 `i `f `d * .0.0002 -> -> 128 `i `d `f ]
 "41
-[; ;main.c: 41:        for(b=0;b<duracion;b++){
+[; ;main.c: 41:      duracion = duracion/tfrec;
+[e = _duracion -> / -> _duracion `f _tfrec `i ]
+"42
+[; ;main.c: 42:      tfrec = 255-((tfrec/2)/(.0002*128));
+[e = _tfrec -> - -> -> 255 `i `d / -> / _tfrec -> -> 2 `i `f `d * .0.0002 -> -> 128 `i `d `f ]
+"44
+[; ;main.c: 44:        for(b=0;b<duracion;b++){
 {
 [e = _b -> 0 `i ]
 [e $U 384  ]
 [e :U 381 ]
 {
-"42
-[; ;main.c: 42:             PORTAbits.RA0 = 0;
+"45
+[; ;main.c: 45:             PORTAbits.RA0 = 0;
 [e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
-"43
-[; ;main.c: 43:            TMR0 = tfrec;
+"46
+[; ;main.c: 46:            TMR0 = tfrec;
 [e = _TMR0 -> _tfrec `us ]
-"44
-[; ;main.c: 44:            while(INTCONbits.TMR0IF==0);
+"47
+[; ;main.c: 47:            while(INTCONbits.TMR0IF==0);
 [e $U 385  ]
 [e :U 386 ]
 [e :U 385 ]
 [e $ == -> . . _INTCONbits 0 2 `i -> 0 `i 386  ]
 [e :U 387 ]
-"45
-[; ;main.c: 45:            INTCONbits.TMR0IF=0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"47
-[; ;main.c: 47:         PORTAbits.RA0=0;
-[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
 "48
-[; ;main.c: 48:          TMR0 = tfrec;
+[; ;main.c: 48:            INTCONbits.TMR0IF=0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+"50
+[; ;main.c: 50:         PORTAbits.RA0=0;
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+"51
+[; ;main.c: 51:          TMR0 = tfrec;
 [e = _TMR0 -> _tfrec `us ]
-"49
-[; ;main.c: 49:          while(INTCONbits.TMR0IF==0);
+"52
+[; ;main.c: 52:          while(INTCONbits.TMR0IF==0);
 [e $U 388  ]
 [e :U 389 ]
 [e :U 388 ]
 [e $ == -> . . _INTCONbits 0 2 `i -> 0 `i 389  ]
 [e :U 390 ]
-"50
-[; ;main.c: 50:          INTCONbits.TMR0IF=0;
+"53
+[; ;main.c: 53:          INTCONbits.TMR0IF=0;
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"51
-[; ;main.c: 51: }
+"54
+[; ;main.c: 54: }
 }
 [e ++ _b -> 1 `i ]
 [e :U 384 ]
 [e $ < _b _duracion 381  ]
 [e :U 382 ]
 }
-"52
-[; ;main.c: 52:  }
+"55
+[; ;main.c: 55:  }
 [e :UE 380 ]
 }
-"57
-[; ;main.c: 57:  void confT0(){
+"60
+[; ;main.c: 60:  void confT0(){
 [v _confT0 `(v ~T0 @X0 1 ef ]
 {
 [e :U _confT0 ]
 [f ]
-"59
-[; ;main.c: 59:     T0CONbits.TMR0ON = 1;
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-"60
-[; ;main.c: 60:       T0CONbits.T08BIT = 1;
-[e = . . _T0CONbits 0 4 -> -> 1 `i `uc ]
-"61
-[; ;main.c: 61:       T0CONbits.T0CS = 0;
-[e = . . _T0CONbits 0 3 -> -> 0 `i `uc ]
 "62
-[; ;main.c: 62:       T0CONbits.T0SE = 0;
-[e = . . _T0CONbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 62:     T0CONbits.TMR0ON = 1;
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
 "63
-[; ;main.c: 63:       T0CONbits.PSA = 0;
-[e = . . _T0CONbits 0 1 -> -> 0 `i `uc ]
+[; ;main.c: 63:       T0CONbits.T08BIT = 1;
+[e = . . _T0CONbits 0 4 -> -> 1 `i `uc ]
 "64
-[; ;main.c: 64:       T0CONbits.T0PS = 0b110;
-[e = . . _T0CONbits 0 0 -> -> 6 `i `uc ]
+[; ;main.c: 64:       T0CONbits.T0CS = 0;
+[e = . . _T0CONbits 0 3 -> -> 0 `i `uc ]
+"65
+[; ;main.c: 65:       T0CONbits.T0SE = 0;
+[e = . . _T0CONbits 0 2 -> -> 0 `i `uc ]
 "66
-[; ;main.c: 66:       INTCONbits.TMR0IE = 1;
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 66:       T0CONbits.PSA = 0;
+[e = . . _T0CONbits 0 1 -> -> 0 `i `uc ]
+"67
+[; ;main.c: 67:       T0CONbits.T0PS = 0b110;
+[e = . . _T0CONbits 0 0 -> -> 6 `i `uc ]
 "69
-[; ;main.c: 69:  }
+[; ;main.c: 69:       INTCONbits.TMR0IE = 1;
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+"72
+[; ;main.c: 72:  }
 [e :UE 391 ]
 }
-"72
-[; ;main.c: 72:  void sw(){
-[v _sw `(v ~T0 @X0 1 ef ]
-{
-[e :U _sw ]
-[f ]
-"73
-[; ;main.c: 73:         tocar_nota(500,3.034);
-[e ( _tocar_nota (2 , -> 500 `i -> .3.034 `f ]
-"74
-[; ;main.c: 74:       tocar_nota(500,3.034);
-[e ( _tocar_nota (2 , -> 500 `i -> .3.034 `f ]
 "75
-[; ;main.c: 75:       tocar_nota(500,3.034);
-[e ( _tocar_nota (2 , -> 500 `i -> .3.034 `f ]
+[; ;main.c: 75:  void cancion1(){
+[v _cancion1 `(v ~T0 @X0 1 ef ]
+{
+[e :U _cancion1 ]
+[f ]
 "77
-[; ;main.c: 77:        tocar_nota(375,3.82);
-[e ( _tocar_nota (2 , -> 375 `i -> .3.82 `f ]
-"78
-[; ;main.c: 78:         tocar_nota(125,2.551);
-[e ( _tocar_nota (2 , -> 125 `i -> .2.551 `f ]
-"80
-[; ;main.c: 80:         tocar_nota(500,3.034);
+[; ;main.c: 77:      tocar_nota(500,3.034);
 [e ( _tocar_nota (2 , -> 500 `i -> .3.034 `f ]
+"78
+[; ;main.c: 78:       tocar_nota(500,3.034);
+[e ( _tocar_nota (2 , -> 500 `i -> .3.034 `f ]
+"79
+[; ;main.c: 79:       tocar_nota(500,3.034);
+[e ( _tocar_nota (2 , -> 500 `i -> .3.034 `f ]
+"81
+[; ;main.c: 81:        tocar_nota(375,3.82);
+[e ( _tocar_nota (2 , -> 375 `i -> .3.82 `f ]
 "82
-[; ;main.c: 82:        tocar_nota(375,3.82);
-[e ( _tocar_nota (2 , -> 375 `i -> .3.82 `f ]
-"83
-[; ;main.c: 83:         tocar_nota(125,2.551);
+[; ;main.c: 82:         tocar_nota(125,2.551);
 [e ( _tocar_nota (2 , -> 125 `i -> .2.551 `f ]
-"85
-[; ;main.c: 85:         tocar_nota(1000,3.034);
-[e ( _tocar_nota (2 , -> 1000 `i -> .3.034 `f ]
+"84
+[; ;main.c: 84:         tocar_nota(500,3.034);
+[e ( _tocar_nota (2 , -> 500 `i -> .3.034 `f ]
+"86
+[; ;main.c: 86:        tocar_nota(375,3.82);
+[e ( _tocar_nota (2 , -> 375 `i -> .3.82 `f ]
 "87
-[; ;main.c: 87:         tocar_nota(500,2.028);
-[e ( _tocar_nota (2 , -> 500 `i -> .2.028 `f ]
-"88
-[; ;main.c: 88:         tocar_nota(500,2.028);
-[e ( _tocar_nota (2 , -> 500 `i -> .2.028 `f ]
+[; ;main.c: 87:         tocar_nota(125,2.551);
+[e ( _tocar_nota (2 , -> 125 `i -> .2.551 `f ]
 "89
-[; ;main.c: 89:         tocar_nota(500,2.028);
-[e ( _tocar_nota (2 , -> 500 `i -> .2.028 `f ]
-"91
-[; ;main.c: 91:         tocar_nota(375,1.911);
-[e ( _tocar_nota (2 , -> 375 `i -> .1.911 `f ]
-"92
-[; ;main.c: 92:         tocar_nota(125,2.551);
-[e ( _tocar_nota (2 , -> 125 `i -> .2.551 `f ]
-"94
-[; ;main.c: 94:         tocar_nota(500,3.61);
-[e ( _tocar_nota (2 , -> 500 `i -> .3.61 `f ]
-"96
-[; ;main.c: 96:          tocar_nota(375,3.82);
-[e ( _tocar_nota (2 , -> 375 `i -> .3.82 `f ]
-"97
-[; ;main.c: 97:         tocar_nota(125,2.551);
-[e ( _tocar_nota (2 , -> 125 `i -> .2.551 `f ]
-"99
-[; ;main.c: 99:         tocar_nota(1000,3.034);
+[; ;main.c: 89:         tocar_nota(1000,3.034);
 [e ( _tocar_nota (2 , -> 1000 `i -> .3.034 `f ]
+"91
+[; ;main.c: 91:         tocar_nota(500,2.028);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.028 `f ]
+"92
+[; ;main.c: 92:         tocar_nota(500,2.028);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.028 `f ]
+"93
+[; ;main.c: 93:         tocar_nota(500,2.028);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.028 `f ]
+"95
+[; ;main.c: 95:         tocar_nota(375,1.911);
+[e ( _tocar_nota (2 , -> 375 `i -> .1.911 `f ]
+"96
+[; ;main.c: 96:         tocar_nota(125,2.551);
+[e ( _tocar_nota (2 , -> 125 `i -> .2.551 `f ]
+"98
+[; ;main.c: 98:         tocar_nota(500,3.61);
+[e ( _tocar_nota (2 , -> 500 `i -> .3.61 `f ]
+"100
+[; ;main.c: 100:          tocar_nota(375,3.82);
+[e ( _tocar_nota (2 , -> 375 `i -> .3.82 `f ]
 "101
-[; ;main.c: 101:         tocar_nota(500,1.517);
-[e ( _tocar_nota (2 , -> 500 `i -> .1.517 `f ]
-"102
-[; ;main.c: 102:         tocar_nota(375,3.034);
-[e ( _tocar_nota (2 , -> 375 `i -> .3.034 `f ]
+[; ;main.c: 101:         tocar_nota(125,2.551);
+[e ( _tocar_nota (2 , -> 125 `i -> .2.551 `f ]
 "103
-[; ;main.c: 103:         tocar_nota(125,3.034);
-[e ( _tocar_nota (2 , -> 125 `i -> .3.034 `f ]
-"104
-[; ;main.c: 104:         tocar_nota(500,1.517);
+[; ;main.c: 103:         tocar_nota(1000,3.034);
+[e ( _tocar_nota (2 , -> 1000 `i -> .3.034 `f ]
+"105
+[; ;main.c: 105:         tocar_nota(500,1.517);
 [e ( _tocar_nota (2 , -> 500 `i -> .1.517 `f ]
 "106
-[; ;main.c: 106:          tocar_nota(375,1.607);
-[e ( _tocar_nota (2 , -> 375 `i -> .1.607 `f ]
+[; ;main.c: 106:         tocar_nota(375,3.034);
+[e ( _tocar_nota (2 , -> 375 `i -> .3.034 `f ]
 "107
-[; ;main.c: 107:         tocar_nota(125,1.703);
-[e ( _tocar_nota (2 , -> 125 `i -> .1.703 `f ]
-"109
-[; ;main.c: 109:          tocar_nota(125,1.804);
-[e ( _tocar_nota (2 , -> 125 `i -> .1.804 `f ]
+[; ;main.c: 107:         tocar_nota(125,3.034);
+[e ( _tocar_nota (2 , -> 125 `i -> .3.034 `f ]
+"108
+[; ;main.c: 108:         tocar_nota(500,1.517);
+[e ( _tocar_nota (2 , -> 500 `i -> .1.517 `f ]
 "110
-[; ;main.c: 110:           tocar_nota(125,1.911);
-[e ( _tocar_nota (2 , -> 125 `i -> .1.911 `f ]
+[; ;main.c: 110:          tocar_nota(375,1.607);
+[e ( _tocar_nota (2 , -> 375 `i -> .1.607 `f ]
 "111
-[; ;main.c: 111:           tocar_nota(300,1.804);
-[e ( _tocar_nota (2 , -> 300 `i -> .1.804 `f ]
+[; ;main.c: 111:         tocar_nota(125,1.703);
+[e ( _tocar_nota (2 , -> 125 `i -> .1.703 `f ]
 "113
-[; ;main.c: 113:           silencio(100,3.822);
-[e ( _silencio (2 , -> 100 `i -> .3.822 `f ]
+[; ;main.c: 113:          tocar_nota(125,1.804);
+[e ( _tocar_nota (2 , -> 125 `i -> .1.804 `f ]
 "114
-[; ;main.c: 114:           tocar_nota(300,2.863);
-[e ( _tocar_nota (2 , -> 300 `i -> .2.863 `f ]
+[; ;main.c: 114:           tocar_nota(125,1.911);
+[e ( _tocar_nota (2 , -> 125 `i -> .1.911 `f ]
 "115
-[; ;main.c: 115:           tocar_nota(500,2.145);
-[e ( _tocar_nota (2 , -> 500 `i -> .2.145 `f ]
+[; ;main.c: 115:           tocar_nota(300,1.804);
+[e ( _tocar_nota (2 , -> 300 `i -> .1.804 `f ]
 "117
-[; ;main.c: 117:           tocar_nota(375,2.273);
-[e ( _tocar_nota (2 , -> 375 `i -> .2.273 `f ]
-"118
-[; ;main.c: 118:         tocar_nota(125,2.408);
-[e ( _tocar_nota (2 , -> 125 `i -> .2.408 `f ]
-"120
-[; ;main.c: 120:         tocar_nota(125,2.551);
-[e ( _tocar_nota (2 , -> 125 `i -> .2.551 `f ]
-"121
-[; ;main.c: 121:         tocar_nota(125,2.703);
-[e ( _tocar_nota (2 , -> 125 `i -> .2.703 `f ]
-"122
-[; ;main.c: 122:         tocar_nota(300,2.551);
-[e ( _tocar_nota (2 , -> 300 `i -> .2.551 `f ]
-"124
-[; ;main.c: 124:         silencio(100,3.822);
+[; ;main.c: 117:           silencio(100,3.822);
 [e ( _silencio (2 , -> 100 `i -> .3.822 `f ]
-"125
-[; ;main.c: 125:         tocar_nota(300,3.822);
-[e ( _tocar_nota (2 , -> 300 `i -> .3.822 `f ]
-"126
-[; ;main.c: 126:         tocar_nota(500,3.608);
-[e ( _tocar_nota (2 , -> 500 `i -> .3.608 `f ]
-"127
-[; ;main.c: 127:          tocar_nota(375,3.822);
-[e ( _tocar_nota (2 , -> 375 `i -> .3.822 `f ]
-"128
-[; ;main.c: 128:         tocar_nota(125,2.551);
+"118
+[; ;main.c: 118:           tocar_nota(300,2.863);
+[e ( _tocar_nota (2 , -> 300 `i -> .2.863 `f ]
+"119
+[; ;main.c: 119:           tocar_nota(500,2.145);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.145 `f ]
+"121
+[; ;main.c: 121:           tocar_nota(375,2.273);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.273 `f ]
+"122
+[; ;main.c: 122:         tocar_nota(125,2.408);
+[e ( _tocar_nota (2 , -> 125 `i -> .2.408 `f ]
+"124
+[; ;main.c: 124:         tocar_nota(125,2.551);
 [e ( _tocar_nota (2 , -> 125 `i -> .2.551 `f ]
+"125
+[; ;main.c: 125:         tocar_nota(125,2.703);
+[e ( _tocar_nota (2 , -> 125 `i -> .2.703 `f ]
+"126
+[; ;main.c: 126:         tocar_nota(300,2.551);
+[e ( _tocar_nota (2 , -> 300 `i -> .2.551 `f ]
+"128
+[; ;main.c: 128:         silencio(100,3.822);
+[e ( _silencio (2 , -> 100 `i -> .3.822 `f ]
+"129
+[; ;main.c: 129:         tocar_nota(300,3.822);
+[e ( _tocar_nota (2 , -> 300 `i -> .3.822 `f ]
 "130
-[; ;main.c: 130:         tocar_nota(500,3.034);
-[e ( _tocar_nota (2 , -> 500 `i -> .3.034 `f ]
+[; ;main.c: 130:         tocar_nota(500,3.608);
+[e ( _tocar_nota (2 , -> 500 `i -> .3.608 `f ]
 "131
-[; ;main.c: 131:         tocar_nota(375,3.822);
+[; ;main.c: 131:          tocar_nota(375,3.822);
 [e ( _tocar_nota (2 , -> 375 `i -> .3.822 `f ]
 "132
 [; ;main.c: 132:         tocar_nota(125,2.551);
 [e ( _tocar_nota (2 , -> 125 `i -> .2.551 `f ]
-"133
-[; ;main.c: 133:         tocar_nota(2500,3.034);
-[e ( _tocar_nota (2 , -> 2500 `i -> .3.034 `f ]
 "134
-[; ;main.c: 134:         silencio(1000,3.822);
-[e ( _silencio (2 , -> 1000 `i -> .3.822 `f ]
+[; ;main.c: 134:         tocar_nota(500,3.034);
+[e ( _tocar_nota (2 , -> 500 `i -> .3.034 `f ]
 "135
-[; ;main.c: 135:  }
+[; ;main.c: 135:         tocar_nota(375,3.822);
+[e ( _tocar_nota (2 , -> 375 `i -> .3.822 `f ]
+"136
+[; ;main.c: 136:         tocar_nota(125,2.551);
+[e ( _tocar_nota (2 , -> 125 `i -> .2.551 `f ]
+"137
+[; ;main.c: 137:         tocar_nota(2500,3.034);
+[e ( _tocar_nota (2 , -> 2500 `i -> .3.034 `f ]
+"138
+[; ;main.c: 138:         silencio(1000,3.822);
+[e ( _silencio (2 , -> 1000 `i -> .3.822 `f ]
+"139
+[; ;main.c: 139:  }
 [e :UE 392 ]
 }
+"141
+[; ;main.c: 141: void cancion2(){
+[v _cancion2 `(v ~T0 @X0 1 ef ]
+{
+[e :U _cancion2 ]
+[f ]
+"144
+[; ;main.c: 144:   tocar_nota(150,1.51);
+[e ( _tocar_nota (2 , -> 150 `i -> .1.51 `f ]
+"145
+[; ;main.c: 145:   tocar_nota(150,1.51);
+[e ( _tocar_nota (2 , -> 150 `i -> .1.51 `f ]
+"146
+[; ;main.c: 146:   tocar_nota(150,1.51);
+[e ( _tocar_nota (2 , -> 150 `i -> .1.51 `f ]
+"147
+[; ;main.c: 147:    tocar_nota(150,1.91);
+[e ( _tocar_nota (2 , -> 150 `i -> .1.91 `f ]
+"148
+[; ;main.c: 148:    tocar_nota(300,1.51);
+[e ( _tocar_nota (2 , -> 300 `i -> .1.51 `f ]
+"149
+[; ;main.c: 149:    tocar_nota(300,1.276);
+[e ( _tocar_nota (2 , -> 300 `i -> .1.276 `f ]
+"151
+[; ;main.c: 151:   tocar_nota(300,1.91);
+[e ( _tocar_nota (2 , -> 300 `i -> .1.91 `f ]
+"154
+[; ;main.c: 154:    tocar_nota(300,2.551);
+[e ( _tocar_nota (2 , -> 300 `i -> .2.551 `f ]
+"156
+[; ;main.c: 156:    tocar_nota(300,3.034);
+[e ( _tocar_nota (2 , -> 300 `i -> .3.034 `f ]
+"158
+[; ;main.c: 158:    tocar_nota(300,2.551);
+[e ( _tocar_nota (2 , -> 300 `i -> .2.551 `f ]
+"160
+[; ;main.c: 160:    tocar_nota(300,2.025);
+[e ( _tocar_nota (2 , -> 300 `i -> .2.025 `f ]
+"162
+[; ;main.c: 162:    tocar_nota(300,2.145);
+[e ( _tocar_nota (2 , -> 300 `i -> .2.145 `f ]
+"164
+[; ;main.c: 164:    tocar_nota(300,2.273);
+[e ( _tocar_nota (2 , -> 300 `i -> .2.273 `f ]
+"166
+[; ;main.c: 166:    tocar_nota(300,2.551);
+[e ( _tocar_nota (2 , -> 300 `i -> .2.551 `f ]
+"169
+[; ;main.c: 169:    tocar_nota(300,1.51);
+[e ( _tocar_nota (2 , -> 300 `i -> .1.51 `f ]
+"173
+[; ;main.c: 173:    tocar_nota(300,1.27);
+[e ( _tocar_nota (2 , -> 300 `i -> .1.27 `f ]
+"174
+[; ;main.c: 174:    tocar_nota(300,1.13);
+[e ( _tocar_nota (2 , -> 300 `i -> .1.13 `f ]
+"176
+[; ;main.c: 176:       tocar_nota(150,1.43);
+[e ( _tocar_nota (2 , -> 150 `i -> .1.43 `f ]
+"177
+[; ;main.c: 177:    tocar_nota(150,1.27);
+[e ( _tocar_nota (2 , -> 150 `i -> .1.27 `f ]
+"179
+[; ;main.c: 179:       tocar_nota(300,1.51);
+[e ( _tocar_nota (2 , -> 300 `i -> .1.51 `f ]
+"182
+[; ;main.c: 182:    tocar_nota(150,1.91);
+[e ( _tocar_nota (2 , -> 150 `i -> .1.91 `f ]
+"184
+[; ;main.c: 184:    tocar_nota(150,1.70);
+[e ( _tocar_nota (2 , -> 150 `i -> .1.70 `f ]
+"186
+[; ;main.c: 186:    tocar_nota(300,2.551);
+[e ( _tocar_nota (2 , -> 300 `i -> .2.551 `f ]
+"190
+[; ;main.c: 190:    tocar_nota(375,3.82);
+[e ( _tocar_nota (2 , -> 375 `i -> .3.82 `f ]
+"192
+[; ;main.c: 192:    tocar_nota(125,3.034);
+[e ( _tocar_nota (2 , -> 125 `i -> .3.034 `f ]
+"193
+[; ;main.c: 193:    tocar_nota(500,2.551);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.551 `f ]
+"195
+[; ;main.c: 195:    tocar_nota(375,3.82);
+[e ( _tocar_nota (2 , -> 375 `i -> .3.82 `f ]
+"197
+[; ;main.c: 197:    tocar_nota(125,2.551);
+[e ( _tocar_nota (2 , -> 125 `i -> .2.551 `f ]
+"199
+[; ;main.c: 199:    tocar_nota(1000,2.863);
+[e ( _tocar_nota (2 , -> 1000 `i -> .2.863 `f ]
+"201
+[; ;main.c: 201:    tocar_nota(500,2.273);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.273 `f ]
+"203
+[; ;main.c: 203:    tocar_nota(500,2.025);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.025 `f ]
+"205
+[; ;main.c: 205:    tocar_nota(500,2.145);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.145 `f ]
+"207
+[; ;main.c: 207:    tocar_nota(375,2.273);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.273 `f ]
+"209
+[; ;main.c: 209:    tocar_nota(125,2.551);
+[e ( _tocar_nota (2 , -> 125 `i -> .2.551 `f ]
+"211
+[; ;main.c: 211:    tocar_nota(500,3.034);
+[e ( _tocar_nota (2 , -> 500 `i -> .3.034 `f ]
+"213
+[; ;main.c: 213:     tocar_nota(375,2.551);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.551 `f ]
+"215
+[; ;main.c: 215:    tocar_nota(125,2.551);
+[e ( _tocar_nota (2 , -> 125 `i -> .2.551 `f ]
+"217
+[; ;main.c: 217:    tocar_nota(1000,3.034);
+[e ( _tocar_nota (2 , -> 1000 `i -> .3.034 `f ]
+"218
+[; ;main.c: 218:    tocar_nota(500,2.551);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.551 `f ]
+"220
+[; ;main.c: 220:    tocar_nota(375,3.034);
+[e ( _tocar_nota (2 , -> 375 `i -> .3.034 `f ]
+"222
+[; ;main.c: 222:    tocar_nota(125,3.82);
+[e ( _tocar_nota (2 , -> 125 `i -> .3.82 `f ]
+"224
+[; ;main.c: 224:    tocar_nota(500,3.405);
+[e ( _tocar_nota (2 , -> 500 `i -> .3.405 `f ]
+"225
+[; ;main.c: 225:    tocar_nota(375,2.025);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.025 `f ]
+"226
+[; ;main.c: 226:    tocar_nota(125,2.551);
+[e ( _tocar_nota (2 , -> 125 `i -> .2.551 `f ]
+"228
+[; ;main.c: 228:    tocar_nota(500,3.034);
+[e ( _tocar_nota (2 , -> 500 `i -> .3.034 `f ]
+"230
+[; ;main.c: 230:    tocar_nota(375,2.551);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.551 `f ]
+"232
+[; ;main.c: 232:    tocar_nota(125,2.551);
+[e ( _tocar_nota (2 , -> 125 `i -> .2.551 `f ]
+"234
+[; ;main.c: 234:    tocar_nota(1000,3.034);
+[e ( _tocar_nota (2 , -> 1000 `i -> .3.034 `f ]
+"235
+[; ;main.c: 235:    tocar_nota(500,2.551);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.551 `f ]
+"237
+[; ;main.c: 237:    tocar_nota(375,3.034);
+[e ( _tocar_nota (2 , -> 375 `i -> .3.034 `f ]
+"239
+[; ;main.c: 239:    tocar_nota(125,3.82);
+[e ( _tocar_nota (2 , -> 125 `i -> .3.82 `f ]
+"241
+[; ;main.c: 241:    tocar_nota(500,3.405);
+[e ( _tocar_nota (2 , -> 500 `i -> .3.405 `f ]
+"242
+[; ;main.c: 242:    tocar_nota(375,2.025);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.025 `f ]
+"243
+[; ;main.c: 243:    tocar_nota(375,2.551);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.551 `f ]
+"245
+[; ;main.c: 245:    tocar_nota(125,2.551);
+[e ( _tocar_nota (2 , -> 125 `i -> .2.551 `f ]
+"247
+[; ;main.c: 247:    tocar_nota(1000,3.034);
+[e ( _tocar_nota (2 , -> 1000 `i -> .3.034 `f ]
+"248
+[; ;main.c: 248:    tocar_nota(500,2.551);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.551 `f ]
+"250
+[; ;main.c: 250:    tocar_nota(375,3.034);
+[e ( _tocar_nota (2 , -> 375 `i -> .3.034 `f ]
+"252
+[; ;main.c: 252:    tocar_nota(125,3.82);
+[e ( _tocar_nota (2 , -> 125 `i -> .3.82 `f ]
+"254
+[; ;main.c: 254:    tocar_nota(500,3.405);
+[e ( _tocar_nota (2 , -> 500 `i -> .3.405 `f ]
+"255
+[; ;main.c: 255:    tocar_nota(375,2.025);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.025 `f ]
+"257
+[; ;main.c: 257:    silencio(1000,3.822);
+[e ( _silencio (2 , -> 1000 `i -> .3.822 `f ]
+"261
+[; ;main.c: 261:  }
+[e :UE 393 ]
+}
+"265
+[; ;main.c: 265:   void cancion3(){
+[v _cancion3 `(v ~T0 @X0 1 ef ]
+{
+[e :U _cancion3 ]
+[f ]
+"267
+[; ;main.c: 267:       tocar_nota(500,2.70);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.70 `f ]
+"268
+[; ;main.c: 268:  tocar_nota(500,2.70);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.70 `f ]
+"269
+[; ;main.c: 269: tocar_nota(500,2.70);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.70 `f ]
+"270
+[; ;main.c: 270: tocar_nota(500,2.70);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.70 `f ]
+"271
+[; ;main.c: 271: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"272
+[; ;main.c: 272: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"273
+[; ;main.c: 273: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"274
+[; ;main.c: 274: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"275
+[; ;main.c: 275: tocar_nota(500,2.70);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.70 `f ]
+"276
+[; ;main.c: 276: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"277
+[; ;main.c: 277: tocar_nota(125,3.40);
+[e ( _tocar_nota (2 , -> 125 `i -> .3.40 `f ]
+"278
+[; ;main.c: 278: tocar_nota(125,3.40);
+[e ( _tocar_nota (2 , -> 125 `i -> .3.40 `f ]
+"279
+[; ;main.c: 279: tocar_nota(125,3.40);
+[e ( _tocar_nota (2 , -> 125 `i -> .3.40 `f ]
+"280
+[; ;main.c: 280: tocar_nota(375,3.03);
+[e ( _tocar_nota (2 , -> 375 `i -> .3.03 `f ]
+"281
+[; ;main.c: 281: tocar_nota(375,3.03);
+[e ( _tocar_nota (2 , -> 375 `i -> .3.03 `f ]
+"282
+[; ;main.c: 282: tocar_nota(500,2.70);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.70 `f ]
+"283
+[; ;main.c: 283: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"284
+[; ;main.c: 284: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"285
+[; ;main.c: 285: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"286
+[; ;main.c: 286: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"287
+[; ;main.c: 287: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"288
+[; ;main.c: 288:  tocar_nota(375,3.03);
+[e ( _tocar_nota (2 , -> 375 `i -> .3.03 `f ]
+"289
+[; ;main.c: 289: tocar_nota(125,2.27);
+[e ( _tocar_nota (2 , -> 125 `i -> .2.27 `f ]
+"290
+[; ;main.c: 290:   tocar_nota(1000,2.86);
+[e ( _tocar_nota (2 , -> 1000 `i -> .2.86 `f ]
+"291
+[; ;main.c: 291: tocar_nota(125,3.82);
+[e ( _tocar_nota (2 , -> 125 `i -> .3.82 `f ]
+"292
+[; ;main.c: 292: tocar_nota(375,3.03);
+[e ( _tocar_nota (2 , -> 375 `i -> .3.03 `f ]
+"293
+[; ;main.c: 293: tocar_nota(375,3.03);
+[e ( _tocar_nota (2 , -> 375 `i -> .3.03 `f ]
+"294
+[; ;main.c: 294: tocar_nota(500,2.70);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.70 `f ]
+"295
+[; ;main.c: 295:  tocar_nota(500,2.70);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.70 `f ]
+"296
+[; ;main.c: 296: tocar_nota(500,2.70);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.70 `f ]
+"297
+[; ;main.c: 297:  tocar_nota(500,2.70);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.70 `f ]
+"298
+[; ;main.c: 298: tocar_nota(500,2.70);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.70 `f ]
+"299
+[; ;main.c: 299: tocar_nota(500,2.70);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.70 `f ]
+"300
+[; ;main.c: 300: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"301
+[; ;main.c: 301: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"302
+[; ;main.c: 302: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"303
+[; ;main.c: 303: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"304
+[; ;main.c: 304: tocar_nota(500,2.70);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.70 `f ]
+"305
+[; ;main.c: 305: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"306
+[; ;main.c: 306: tocar_nota(125,3.40);
+[e ( _tocar_nota (2 , -> 125 `i -> .3.40 `f ]
+"307
+[; ;main.c: 307: tocar_nota(125,3.40);
+[e ( _tocar_nota (2 , -> 125 `i -> .3.40 `f ]
+"308
+[; ;main.c: 308: tocar_nota(125,3.40);
+[e ( _tocar_nota (2 , -> 125 `i -> .3.40 `f ]
+"309
+[; ;main.c: 309: tocar_nota(375,3.03);
+[e ( _tocar_nota (2 , -> 375 `i -> .3.03 `f ]
+"310
+[; ;main.c: 310: tocar_nota(375,3.03);
+[e ( _tocar_nota (2 , -> 375 `i -> .3.03 `f ]
+"311
+[; ;main.c: 311: tocar_nota(500,2.70);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.70 `f ]
+"312
+[; ;main.c: 312: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"313
+[; ;main.c: 313: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"314
+[; ;main.c: 314: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"315
+[; ;main.c: 315: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"316
+[; ;main.c: 316: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"317
+[; ;main.c: 317:  tocar_nota(375,3.03);
+[e ( _tocar_nota (2 , -> 375 `i -> .3.03 `f ]
+"318
+[; ;main.c: 318: tocar_nota(125,2.27);
+[e ( _tocar_nota (2 , -> 125 `i -> .2.27 `f ]
+"319
+[; ;main.c: 319:   tocar_nota(1000,2.86);
+[e ( _tocar_nota (2 , -> 1000 `i -> .2.86 `f ]
+"320
+[; ;main.c: 320: tocar_nota(125,3.82);
+[e ( _tocar_nota (2 , -> 125 `i -> .3.82 `f ]
+"321
+[; ;main.c: 321: tocar_nota(375,3.03);
+[e ( _tocar_nota (2 , -> 375 `i -> .3.03 `f ]
+"322
+[; ;main.c: 322: tocar_nota(375,3.03);
+[e ( _tocar_nota (2 , -> 375 `i -> .3.03 `f ]
+"323
+[; ;main.c: 323: tocar_nota(500,2.70);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.70 `f ]
+"324
+[; ;main.c: 324:  tocar_nota(500,2.70);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.70 `f ]
+"325
+[; ;main.c: 325: tocar_nota(500,2.70);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.70 `f ]
+"326
+[; ;main.c: 326:  tocar_nota(500,2.70);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.70 `f ]
+"327
+[; ;main.c: 327: tocar_nota(500,2.70);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.70 `f ]
+"328
+[; ;main.c: 328: tocar_nota(500,2.70);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.70 `f ]
+"329
+[; ;main.c: 329: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"330
+[; ;main.c: 330: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"331
+[; ;main.c: 331: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"332
+[; ;main.c: 332: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"333
+[; ;main.c: 333: tocar_nota(500,2.70);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.70 `f ]
+"334
+[; ;main.c: 334: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"335
+[; ;main.c: 335: tocar_nota(125,3.40);
+[e ( _tocar_nota (2 , -> 125 `i -> .3.40 `f ]
+"336
+[; ;main.c: 336: tocar_nota(125,3.40);
+[e ( _tocar_nota (2 , -> 125 `i -> .3.40 `f ]
+"337
+[; ;main.c: 337: tocar_nota(125,3.40);
+[e ( _tocar_nota (2 , -> 125 `i -> .3.40 `f ]
+"338
+[; ;main.c: 338: tocar_nota(375,3.03);
+[e ( _tocar_nota (2 , -> 375 `i -> .3.03 `f ]
+"339
+[; ;main.c: 339: tocar_nota(375,3.03);
+[e ( _tocar_nota (2 , -> 375 `i -> .3.03 `f ]
+"340
+[; ;main.c: 340: tocar_nota(500,2.70);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.70 `f ]
+"341
+[; ;main.c: 341: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"342
+[; ;main.c: 342: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"343
+[; ;main.c: 343: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"344
+[; ;main.c: 344: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"345
+[; ;main.c: 345: tocar_nota(375,2.73);
+[e ( _tocar_nota (2 , -> 375 `i -> .2.73 `f ]
+"346
+[; ;main.c: 346:  tocar_nota(375,3.03);
+[e ( _tocar_nota (2 , -> 375 `i -> .3.03 `f ]
+"347
+[; ;main.c: 347: tocar_nota(125,2.27);
+[e ( _tocar_nota (2 , -> 125 `i -> .2.27 `f ]
+"348
+[; ;main.c: 348:   tocar_nota(1000,2.86);
+[e ( _tocar_nota (2 , -> 1000 `i -> .2.86 `f ]
+"349
+[; ;main.c: 349: tocar_nota(125,3.82);
+[e ( _tocar_nota (2 , -> 125 `i -> .3.82 `f ]
+"350
+[; ;main.c: 350: tocar_nota(375,3.03);
+[e ( _tocar_nota (2 , -> 375 `i -> .3.03 `f ]
+"351
+[; ;main.c: 351: tocar_nota(375,3.03);
+[e ( _tocar_nota (2 , -> 375 `i -> .3.03 `f ]
+"352
+[; ;main.c: 352: tocar_nota(500,2.70);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.70 `f ]
+"353
+[; ;main.c: 353:  tocar_nota(500,2.70);
+[e ( _tocar_nota (2 , -> 500 `i -> .2.70 `f ]
+"354
+[; ;main.c: 354:    silencio(1000,3.822);
+[e ( _silencio (2 , -> 1000 `i -> .3.822 `f ]
+"355
+[; ;main.c: 355:  }
+[e :UE 394 ]
+}
 [v $root$_main `(v ~T0 @X0 0 e ]
-"139
-[; ;main.c: 139: void main(void) {
+"357
+[; ;main.c: 357: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"141
-[; ;main.c: 141:     ADCON1 = 15;
+"359
+[; ;main.c: 359:     ADCON1 = 15;
 [e = _ADCON1 -> -> 15 `i `uc ]
-"143
-[; ;main.c: 143:     TRISA = 0b00010000;
+"361
+[; ;main.c: 361:     TRISA = 0b00010000;
 [e = _TRISA -> -> 16 `i `uc ]
-"145
-[; ;main.c: 145:     LCD_Init();
+"363
+[; ;main.c: 363:     LCD_Init();
 [e ( _LCD_Init ..  ]
-"146
-[; ;main.c: 146:     confT0();
+"364
+[; ;main.c: 364:     confT0();
 [e ( _confT0 ..  ]
-"147
-[; ;main.c: 147:   while (1) {
-[e :U 395 ]
+"366
+[; ;main.c: 366: while (1) {
+[e :U 397 ]
 {
-"150
-[; ;main.c: 150:       sw();
-[e ( _sw ..  ]
-"153
-[; ;main.c: 153:   }
+"368
+[; ;main.c: 368:      if (PORTBbits.RB0 == 1) {
+[e $ ! == -> . . _PORTBbits 0 0 `i -> 1 `i 399  ]
+{
+"369
+[; ;main.c: 369:          while(PORTBbits.RB0==1);
+[e $U 400  ]
+[e :U 401 ]
+[e :U 400 ]
+[e $ == -> . . _PORTBbits 0 0 `i -> 1 `i 401  ]
+[e :U 402 ]
+"370
+[; ;main.c: 370:                        cancion1();
+[e ( _cancion1 ..  ]
+"372
+[; ;main.c: 372:      }
 }
-[e :U 394 ]
-[e $U 395  ]
+[e :U 399 ]
+"373
+[; ;main.c: 373:      if (PORTBbits.RB1 == 1) {
+[e $ ! == -> . . _PORTBbits 0 1 `i -> 1 `i 403  ]
+{
+"374
+[; ;main.c: 374: while(PORTBbits.RB1==1);
+[e $U 404  ]
+[e :U 405 ]
+[e :U 404 ]
+[e $ == -> . . _PORTBbits 0 1 `i -> 1 `i 405  ]
+[e :U 406 ]
+"375
+[; ;main.c: 375:                        cancion2();
+[e ( _cancion2 ..  ]
+"377
+[; ;main.c: 377:      }
+}
+[e :U 403 ]
+"378
+[; ;main.c: 378:      if (PORTBbits.RB2 == 1) {
+[e $ ! == -> . . _PORTBbits 0 2 `i -> 1 `i 407  ]
+{
+"379
+[; ;main.c: 379:          while(PORTBbits.RB2==1);
+[e $U 408  ]
+[e :U 409 ]
+[e :U 408 ]
+[e $ == -> . . _PORTBbits 0 2 `i -> 1 `i 409  ]
+[e :U 410 ]
+"380
+[; ;main.c: 380:                        cancion3();
+[e ( _cancion3 ..  ]
+"383
+[; ;main.c: 383:      }
+}
+[e $U 411  ]
+"384
+[; ;main.c: 384:      else{
+[e :U 407 ]
+{
+"385
+[; ;main.c: 385:          PORTAbits.RA0 = 0;
+[e = . . _PORTAbits 0 0 -> -> 0 `i `uc ]
+"386
+[; ;main.c: 386:      }
+}
+[e :U 411 ]
+"388
+[; ;main.c: 388:   }
+}
 [e :U 396 ]
-"161
-[; ;main.c: 161: }
-[e :UE 393 ]
+[e $U 397  ]
+[e :U 398 ]
+"396
+[; ;main.c: 396: }
+[e :UE 395 ]
 }

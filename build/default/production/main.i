@@ -5783,10 +5783,12 @@ float distancia = 2;
 
  void tocar_nota(int duracion, float tfrec){
 
+
      duracion = duracion/tfrec;
      tfrec = 255-((tfrec/2)/(.0002*128));
 
        for(b=0;b<duracion;b++){
+
             PORTAbits.RA0 = 1;
            TMR0 = tfrec;
            while(INTCONbits.TMR0IF==0);
@@ -5797,6 +5799,7 @@ float distancia = 2;
          while(INTCONbits.TMR0IF==0);
          INTCONbits.TMR0IF=0;
 }
+
  }
  void silencio(int duracion, float tfrec){
 
@@ -5834,8 +5837,9 @@ float distancia = 2;
  }
 
 
- void sw(){
-        tocar_nota(500,3.034);
+ void cancion1(){
+
+     tocar_nota(500,3.034);
       tocar_nota(500,3.034);
       tocar_nota(500,3.034);
 
@@ -5899,7 +5903,221 @@ float distancia = 2;
         silencio(1000,3.822);
  }
 
+void cancion2(){
 
+
+  tocar_nota(150,1.51);
+  tocar_nota(150,1.51);
+  tocar_nota(150,1.51);
+   tocar_nota(150,1.91);
+   tocar_nota(300,1.51);
+   tocar_nota(300,1.276);
+
+  tocar_nota(300,1.91);
+
+
+   tocar_nota(300,2.551);
+
+   tocar_nota(300,3.034);
+
+   tocar_nota(300,2.551);
+
+   tocar_nota(300,2.025);
+
+   tocar_nota(300,2.145);
+
+   tocar_nota(300,2.273);
+
+   tocar_nota(300,2.551);
+
+
+   tocar_nota(300,1.51);
+
+
+
+   tocar_nota(300,1.27);
+   tocar_nota(300,1.13);
+
+      tocar_nota(150,1.43);
+   tocar_nota(150,1.27);
+
+      tocar_nota(300,1.51);
+
+
+   tocar_nota(150,1.91);
+
+   tocar_nota(150,1.70);
+
+   tocar_nota(300,2.551);
+
+
+
+   tocar_nota(375,3.82);
+
+   tocar_nota(125,3.034);
+   tocar_nota(500,2.551);
+
+   tocar_nota(375,3.82);
+
+   tocar_nota(125,2.551);
+
+   tocar_nota(1000,2.863);
+
+   tocar_nota(500,2.273);
+
+   tocar_nota(500,2.025);
+
+   tocar_nota(500,2.145);
+
+   tocar_nota(375,2.273);
+
+   tocar_nota(125,2.551);
+
+   tocar_nota(500,3.034);
+
+    tocar_nota(375,2.551);
+
+   tocar_nota(125,2.551);
+
+   tocar_nota(1000,3.034);
+   tocar_nota(500,2.551);
+
+   tocar_nota(375,3.034);
+
+   tocar_nota(125,3.82);
+
+   tocar_nota(500,3.405);
+   tocar_nota(375,2.025);
+   tocar_nota(125,2.551);
+
+   tocar_nota(500,3.034);
+
+   tocar_nota(375,2.551);
+
+   tocar_nota(125,2.551);
+
+   tocar_nota(1000,3.034);
+   tocar_nota(500,2.551);
+
+   tocar_nota(375,3.034);
+
+   tocar_nota(125,3.82);
+
+   tocar_nota(500,3.405);
+   tocar_nota(375,2.025);
+   tocar_nota(375,2.551);
+
+   tocar_nota(125,2.551);
+
+   tocar_nota(1000,3.034);
+   tocar_nota(500,2.551);
+
+   tocar_nota(375,3.034);
+
+   tocar_nota(125,3.82);
+
+   tocar_nota(500,3.405);
+   tocar_nota(375,2.025);
+
+   silencio(1000,3.822);
+
+
+
+ }
+
+
+
+  void cancion3(){
+
+      tocar_nota(500,2.70);
+ tocar_nota(500,2.70);
+tocar_nota(500,2.70);
+tocar_nota(500,2.70);
+tocar_nota(375,2.73);
+tocar_nota(375,2.73);
+tocar_nota(375,2.73);
+tocar_nota(375,2.73);
+tocar_nota(500,2.70);
+tocar_nota(375,2.73);
+tocar_nota(125,3.40);
+tocar_nota(125,3.40);
+tocar_nota(125,3.40);
+tocar_nota(375,3.03);
+tocar_nota(375,3.03);
+tocar_nota(500,2.70);
+tocar_nota(375,2.73);
+tocar_nota(375,2.73);
+tocar_nota(375,2.73);
+tocar_nota(375,2.73);
+tocar_nota(375,2.73);
+ tocar_nota(375,3.03);
+tocar_nota(125,2.27);
+  tocar_nota(1000,2.86);
+tocar_nota(125,3.82);
+tocar_nota(375,3.03);
+tocar_nota(375,3.03);
+tocar_nota(500,2.70);
+ tocar_nota(500,2.70);
+tocar_nota(500,2.70);
+ tocar_nota(500,2.70);
+tocar_nota(500,2.70);
+tocar_nota(500,2.70);
+tocar_nota(375,2.73);
+tocar_nota(375,2.73);
+tocar_nota(375,2.73);
+tocar_nota(375,2.73);
+tocar_nota(500,2.70);
+tocar_nota(375,2.73);
+tocar_nota(125,3.40);
+tocar_nota(125,3.40);
+tocar_nota(125,3.40);
+tocar_nota(375,3.03);
+tocar_nota(375,3.03);
+tocar_nota(500,2.70);
+tocar_nota(375,2.73);
+tocar_nota(375,2.73);
+tocar_nota(375,2.73);
+tocar_nota(375,2.73);
+tocar_nota(375,2.73);
+ tocar_nota(375,3.03);
+tocar_nota(125,2.27);
+  tocar_nota(1000,2.86);
+tocar_nota(125,3.82);
+tocar_nota(375,3.03);
+tocar_nota(375,3.03);
+tocar_nota(500,2.70);
+ tocar_nota(500,2.70);
+tocar_nota(500,2.70);
+ tocar_nota(500,2.70);
+tocar_nota(500,2.70);
+tocar_nota(500,2.70);
+tocar_nota(375,2.73);
+tocar_nota(375,2.73);
+tocar_nota(375,2.73);
+tocar_nota(375,2.73);
+tocar_nota(500,2.70);
+tocar_nota(375,2.73);
+tocar_nota(125,3.40);
+tocar_nota(125,3.40);
+tocar_nota(125,3.40);
+tocar_nota(375,3.03);
+tocar_nota(375,3.03);
+tocar_nota(500,2.70);
+tocar_nota(375,2.73);
+tocar_nota(375,2.73);
+tocar_nota(375,2.73);
+tocar_nota(375,2.73);
+tocar_nota(375,2.73);
+ tocar_nota(375,3.03);
+tocar_nota(125,2.27);
+  tocar_nota(1000,2.86);
+tocar_nota(125,3.82);
+tocar_nota(375,3.03);
+tocar_nota(375,3.03);
+tocar_nota(500,2.70);
+ tocar_nota(500,2.70);
+   silencio(1000,3.822);
+ }
 
 void main(void) {
 
@@ -5909,11 +6127,28 @@ void main(void) {
 
     LCD_Init();
     confT0();
-  while (1) {
+
+while (1) {
+
+     if (PORTBbits.RB0 == 1) {
+         while(PORTBbits.RB0==1);
+                       cancion1();
+
+     }
+     if (PORTBbits.RB1 == 1) {
+while(PORTBbits.RB1==1);
+                       cancion2();
+
+     }
+     if (PORTBbits.RB2 == 1) {
+         while(PORTBbits.RB2==1);
+                       cancion3();
 
 
-      sw();
-
+     }
+     else{
+         PORTAbits.RA0 = 0;
+     }
 
   }
 

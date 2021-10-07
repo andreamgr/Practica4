@@ -39,13 +39,17 @@
 [v _LCD_Data LCD_Data `(v  1 e 1 0 ]
 "19 C:\Users\Microcontroladores\Practica4.X\main.c
 [v _tocar_nota tocar_nota `(v  1 e 1 0 ]
-"36
+"39
 [v _silencio silencio `(v  1 e 1 0 ]
-"57
+"60
 [v _confT0 confT0 `(v  1 e 1 0 ]
-"72
-[v _sw sw `(v  1 e 1 0 ]
-"139
+"75
+[v _cancion1 cancion1 `(v  1 e 1 0 ]
+"141
+[v _cancion2 cancion2 `(v  1 e 1 0 ]
+"265
+[v _cancion3 cancion3 `(v  1 e 1 0 ]
+"357
 [v _main main `(v  1 e 1 0 ]
 [s S148 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
@@ -77,6 +81,29 @@
 ]
 [u S175 . 1 `S148 1 . 1 0 `S156 1 . 1 0 `S164 1 . 1 0 `S170 1 . 1 0 `S173 1 . 1 0 ]
 [v _PORTAbits PORTAbits `VES175  1 e 1 @3968 ]
+[s S288 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"2483
+[s S297 . 1 `uc 1 INT0 1 0 :1:0 
+`uc 1 INT1 1 0 :1:1 
+`uc 1 INT2 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 PGM 1 0 :1:5 
+`uc 1 PGC 1 0 :1:6 
+`uc 1 PGD 1 0 :1:7 
+]
+[s S305 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 CCP2_PA2 1 0 :1:3 
+]
+[u S308 . 1 `S288 1 . 1 0 `S297 1 . 1 0 `S305 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES308  1 e 1 @3969 ]
 "2705
 [v _PORTD PORTD `VEuc  1 e 1 @3971 ]
 [s S66 . 1 `uc 1 LATD0 1 0 :1:0 
@@ -170,29 +197,44 @@
 [v _INTCONbits INTCONbits `VES232  1 e 1 @4082 ]
 "17 C:\Users\Microcontroladores\Practica4.X\main.c
 [v _b b `i  1 e 2 0 ]
-"139
+"357
 [v _main main `(v  1 e 1 0 ]
 {
-"161
+"396
 } 0
-"72
-[v _sw sw `(v  1 e 1 0 ]
+"60
+[v _confT0 confT0 `(v  1 e 1 0 ]
 {
-"135
+"72
+} 0
+"265
+[v _cancion3 cancion3 `(v  1 e 1 0 ]
+{
+"355
+} 0
+"141
+[v _cancion2 cancion2 `(v  1 e 1 0 ]
+{
+"261
+} 0
+"75
+[v _cancion1 cancion1 `(v  1 e 1 0 ]
+{
+"139
 } 0
 "19
 [v _tocar_nota tocar_nota `(v  1 e 1 0 ]
 {
 [v tocar_nota@duracion duracion `i  1 p 2 49 ]
 [v tocar_nota@tfrec tfrec `f  1 p 4 51 ]
-"35
+"38
 } 0
-"36
+"39
 [v _silencio silencio `(v  1 e 1 0 ]
 {
 [v silencio@duracion duracion `i  1 p 2 49 ]
 [v silencio@tfrec tfrec `f  1 p 4 51 ]
-"52
+"55
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
@@ -261,11 +303,6 @@
 [v ___fldiv@b b `d  1 p 4 14 ]
 [v ___fldiv@a a `d  1 p 4 18 ]
 "185
-} 0
-"57 C:\Users\Microcontroladores\Practica4.X\main.c
-[v _confT0 confT0 `(v  1 e 1 0 ]
-{
-"69
 } 0
 "5 C:\Users\Microcontroladores\Practica4.X\LCD_lib.c
 [v _LCD_Init LCD_Init `(v  1 e 1 0 ]
